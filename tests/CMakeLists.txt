@@ -1,6 +1,6 @@
 set(CMAKE_CXX_STANDARD 17)
-find_package(Catch2 REQUIRED)
-find_package(trompeloeil REQUIRED)
+find_package(Catch2 REQUIRED HINTS ../external/lib/cmake/Catch2)
+find_package(trompeloeil REQUIRED HINTS ../external/lib/cmake/trompeloeil)
 
 aux_source_directory(src UNIT_TEST_LIST)
 
