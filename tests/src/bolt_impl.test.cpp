@@ -1,5 +1,5 @@
-#include <catch2/catch.hpp>
-#include <catch2/trompeloeil.hpp>
+#include <catch.hpp>
+#include <trompeloeil.hpp>
 
 #include "bolt_impl.h"
 #include "http/http_connection_handler.h"

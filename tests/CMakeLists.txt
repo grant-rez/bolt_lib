@@ -1,6 +1,10 @@
 set(CMAKE_CXX_STANDARD 17)
-find_package(Catch2 REQUIRED)
-find_package(trompeloeil REQUIRED)
+
+add_library(Catch2 INTERFACE)
+add_library(trompeloeil INTERFACE)
+
+target_include_directories(Catch2 INTERFACE include/)
+target_include_directories(trompeloeil INTERFACE include/)
 
 aux_source_directory(src UNIT_TEST_LIST)
 
@@ -23,7 +27,7 @@ foreach(FILE IN LISTS UNIT_TEST_LIST)
 
   target_link_libraries(${TARGET_NAME} 
     bolt
-    Catch2::Catch2
+    Catch2
     trompeloeil
   )
 
