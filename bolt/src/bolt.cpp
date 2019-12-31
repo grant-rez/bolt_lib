@@ -14,15 +14,8 @@ Bolt::Bolt()
     : pImpl(std::make_unique<BoltImpl>(
           HttpConnectionHandlerFactory::getHttpConnectionHandler())) {}
 
-Bolt::Bolt(Bolt &&other) : pImpl(std::move(other.pImpl)) {}
-
-Bolt Bolt::operator=(Bolt &&other) {
-  if (this != &other) {
-    pImpl = std::move(other.pImpl);
-  }
-  return std::move(*this);
-}
-
+Bolt::Bolt(Bolt &&other) = default;
+Bolt & Bolt::operator=(Bolt &&other) = default;
 Bolt::~Bolt() = default;
 
 void Bolt::run() { pImpl->run(); }
