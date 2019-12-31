@@ -9,7 +9,7 @@ class Bolt {
  public:
   Bolt();
   Bolt(Bolt &&other);
-  Bolt operator=(Bolt &&other);
+  Bolt & operator=(Bolt &&other);
   ~Bolt();
 
   void run();
